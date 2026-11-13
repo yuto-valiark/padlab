@@ -33,8 +33,9 @@ export function useCanvas(
     ro.observe(cv);
     if (animate) {
       const loop = () => {
-        if (w > 0) paint();
+        // Schedule the next frame first so one bad frame can't stop the animation for good.
         raf = requestAnimationFrame(loop);
+        if (w > 0) paint();
       };
       raf = requestAnimationFrame(loop);
     } else paint();

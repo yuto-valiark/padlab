@@ -70,7 +70,8 @@ function Spectrum() {
   const smooth = useRef<Float32Array | null>(null);
   const ref = useCanvas((g, w, h) => {
     g.clearRect(0, 0, w, h);
-    if (!engine.ctx) return;
+    // The analyser appears a moment after the AudioContext (the mixer is built async).
+    if (!engine.ctx || !engine.analyser) return;
     const an = engine.analyser;
     buf.current ??= new Uint8Array(an.frequencyBinCount);
     an.getByteFrequencyData(buf.current);
