@@ -1,5 +1,7 @@
 # PADLAB — Finger Drum Workstation
 
+**▶ https://yuto-valiark.github.io/padlab/** （Chrome 推奨・インストール不要）
+
 Mac のキーボードを 4×4 パッドにして、フィンガードラミングでビートを叩けるブラウザアプリ。
 
 ## 起動
